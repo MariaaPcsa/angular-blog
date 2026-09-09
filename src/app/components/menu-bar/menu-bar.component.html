@@ -1,0 +1,20 @@
+<nav class="nav__container">
+  <div class="nav__brand">
+    <a [routerLink]="['/']" class="brand__logo">
+      <span class="brand__icon">⚡</span>
+      <span class="brand__text">ANGULAR<span class="brand__accent">BLOG</span></span>
+    </a>
+  </div>
+
+  <div class="nav__links">
+    <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav__item">Home</a>
+    <a href="https://github.com/MariaaPcsa?tab=repositories" target="_blank" rel="noopener noreferrer" class="nav__item nav__item--external">
+      <span>GitHub</span>
+      <svg class="external__icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/maria-aparecida-c-dos-santos-42280a185" target="_blank" rel="noopener noreferrer" class="nav__item nav__item--external">
+      <span>LinkedIn</span>
+      <svg class="external__icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+    </a>
+  </div>
+</nav>

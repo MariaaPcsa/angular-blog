@@ -1,0 +1,35 @@
+<article class="container__small-card">
+  <div class="small-card__wrapper">
+    <div class="small-card__photo-container">
+      <a [routerLink]="['/content', Id]">
+        <img
+          [src]="photoCover"
+          [alt]="cardTitle"
+          class="small-card__photo"
+          loading="lazy"
+        >
+      </a>
+    </div>
+
+    <div class="small-card__content">
+      @if (category || date) {
+        <div class="small-card__meta">
+          @if (category) {
+            <span class="small-card__tag">{{ category }}</span>
+          }
+          @if (date) {
+            <span class="small-card__date">{{ date }}</span>
+          }
+        </div>
+      }
+
+      <h3 class="small-card__title">
+        <a [routerLink]="['/content', Id]">{{ cardTitle }}</a>
+      </h3>
+
+      @if (readTime) {
+        <span class="small-card__read-time">{{ readTime }}</span>
+      }
+    </div>
+  </div>
+</article>

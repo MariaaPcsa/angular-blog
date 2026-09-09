@@ -1,0 +1,91 @@
+<main class="page__home">
+  <app-menu-title></app-menu-title>
+
+  <!-- Filter & Search Bar Section -->
+  <section class="controls__section">
+    <div class="categories__container">
+      @for (category of categories; track category) {
+        <button
+          type="button"
+          class="category__btn"
+          [class.active]="selectedCategory === category"
+          (click)="onSelectCategory(category)"
+        >
+          {{ category }}
+        </button>
+      }
+    </div>
+
+    <div class="search__container">
+      <div class="search__wrapper">
+        <svg class="search__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input
+          type="text"
+          class="search__input"
+          placeholder="Buscar artigos..."
+          [value]="searchTerm"
+          (input)="onSearchChange($event)"
+        />
+        @if (searchTerm) {
+          <button type="button" class="search__clear" (click)="clearFilters()">✕</button>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Grid -->
+  @if (filteredArticles.length > 0) {
+    <section class="container__articles">
+      <!-- Main Featured Article -->
+      @if (featuredArticle) {
+        <div class="articles__main">
+          <app-big-card
+            [Id]="featuredArticle.id"
+            [photoCover]="featuredArticle.photoCover"
+            [cardTitle]="featuredArticle.title"
+            [cardDescription]="featuredArticle.description"
+            [category]="featuredArticle.category"
+            [date]="featuredArticle.date"
+            [readTime]="featuredArticle.readTime"
+            [author]="featuredArticle.author"
+          >
+          </app-big-card>
+        </div>
+      }
+
+      <!-- Secondary Articles -->
+      <div class="articles__others">
+        <h3 class="section__subtitle">
+          <span>Últimas Publicações</span>
+          <span class="count__badge">{{ secondaryArticles.length }}</span>
+        </h3>
+        
+        <div class="secondary__list">
+          @for (article of secondaryArticles; track article.id) {
+            <app-small-card
+              [Id]="article.id"
+              [cardTitle]="article.title"
+              [photoCover]="article.photoCover"
+              [category]="article.category"
+              [date]="article.date"
+              [readTime]="article.readTime"
+            >
+            </app-small-card>
+          } @empty {
+            <div class="no-secondary-articles">
+              <p>Nenhum artigo adicional nesta categoria.</p>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+  } @else {
+    <!-- Empty State -->
+    <div class="empty__state">
+      <div class="empty__icon">🔍</div>
+      <h2>Nenhum artigo encontrado</h2>
+      <p>Não encontramos nenhum resultado para sua busca ou filtro atual.</p>
+      <button type="button" class="btn__reset" (click)="clearFilters()">Limpar Filtros</button>
+    </div>
+  }
+</main>

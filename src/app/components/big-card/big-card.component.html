@@ -1,0 +1,43 @@
+<article class="container__big-card">
+  <div class="big-card__photo-wrapper">
+    <a [routerLink]="['/content', Id]" class="photo__link">
+      <img
+        [src]="photoCover"
+        [alt]="cardTitle"
+        class="big-card__photo"
+        loading="lazy"
+      >
+      <div class="photo__overlay"></div>
+    </a>
+    <span class="big-card__badge">{{ category }}</span>
+  </div>
+
+  <div class="big-card__content">
+    <div class="big-card__meta">
+      @if (date) {
+        <span class="meta__item">{{ date }}</span>
+      }
+      @if (date && readTime) {
+        <span class="meta__dot">•</span>
+      }
+      @if (readTime) {
+        <span class="meta__item">{{ readTime }}</span>
+      }
+    </div>
+
+    <h2 class="big-card__title">
+      <a [routerLink]="['/content', Id]">{{ cardTitle }}</a>
+    </h2>
+
+    <p class="big-card__description">
+      {{ cardDescription }}
+    </p>
+
+    <div class="big-card__footer">
+      <a [routerLink]="['/content', Id]" class="btn__read-more">
+        <span>Ler artigo completo</span>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+    </div>
+  </div>
+</article>
