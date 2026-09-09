@@ -5,10 +5,21 @@
   <img src="https://img.shields.io/badge/Angular-17.3+-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular 17" />
   <img src="https://img.shields.io/badge/TypeScript-5.4+-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/RxJS-7.8+-B7178C?style=for-the-badge&logo=reactivex&logoColor=white" alt="RxJS" />
-  <img src="https://img.shields.io/badge/Theme-Dark%20Mode-151821?style=for-the-badge" alt="Dark Theme" />
+  <a href="https://angular-blog-phi-nine.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel Deploy" />
+  </a>
 </p>
 
-Projeto desenvolvido como solução para o desafio **"Criando um Blog com Angular"** da [DIO (Digital Innovation One)](https://www.dio.me/).
+Um portal moderno de notícias e artigos sobre cinema, séries, quadrinhos e tecnologia, desenvolvido com as melhores práticas do ecossistema **Angular 17+**. O projeto conta com design responsivo em tema escuro (*Dark Theme*), controle de fluxo nativo e declarativo, busca em tempo real e filtros interativos por categorias.
+
+---
+
+## 🌐 Demonstração Online
+
+Acesse o projeto publicado em produção:  
+👉 **[https://angular-blog-phi-nine.vercel.app/](https://angular-blog-phi-nine.vercel.app/)**
+
+---
 
 A proposta original do desafio consiste em construir a estrutura de um blog moderno utilizando componentes reutilizáveis, comunicação via `@Input()`, roteamento parametrizado (`/content/:id`) e renderização de dados mockados. Este projeto foi atualizado e expandido para o **Angular 17+**, incorporando recursos modernos como controle de fluxo nativo (`@if`, `@for`, `@empty`), filtros de categoria, busca em tempo real e um design system *Dark Theme* com visual premium.
 
